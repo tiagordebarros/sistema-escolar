@@ -12,4 +12,15 @@ public class Aluno {
     this.endereco = endereco;
     this.dataDeNascimento = dataDeNascimento;
   }
+
+  @Override
+  public String toString(){
+    return "{" +
+    "nome='" + nome + '\'' +
+    ", cpf='" + cpf + '\'' +
+    ", endereco='" + endereco + '\'' +
+    ", dataDeNascimento=" + dataDeNascimento +
+    '}';
+  }
+
 }
