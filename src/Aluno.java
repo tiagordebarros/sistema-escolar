@@ -13,8 +13,17 @@ public class Aluno {
     this.dataDeNascimento = dataDeNascimento;
   }
 
+  public String getNome() {
+    return nome;
+  }
+
+  public int getIdade() {
+    LocalDate dataAtual = LocalDate.now();
+    return dataAtual.minusYears(dataDeNascimento.getYear()).getYear();
+  }
+
   @Override
-  public String toString(){
+  public String toString() {
     return "{" +
     "nome='" + nome + '\'' +
     ", cpf='" + cpf + '\'' +
