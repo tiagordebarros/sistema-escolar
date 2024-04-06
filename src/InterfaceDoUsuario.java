@@ -74,6 +74,11 @@ public class InterfaceDoUsuario {
                     // Listar alunos em ordem alfabética
                     listaDeAlunos.ordenar();
                     break;
+                case 5:
+                    // Listar todas as turmas
+                    System.out.println("Turmas cadastradas:");
+                    System.out.println(turmas);
+                    break;
             }
         } while (opcao != 8);
         scanner.close();
