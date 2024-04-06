@@ -12,6 +12,7 @@ public class InterfaceDoUsuario {
 
         // Lista de turmas
         List<Turma> turmas = new ArrayList<>();
+        // Turma listaDeTurmas = new Turma();
 
         // Menu de opções
         int opcao;
@@ -59,6 +60,8 @@ public class InterfaceDoUsuario {
                     int numeroDeMatriculados = scanner.nextInt();
                     Turma turma = new Turma(codigoDaTurma, etapaDeEnsino, ano, limiteDeVagas, numeroDeMatriculados);
                     turmas.add(turma);
+                    System.out.println(turmas);
+                    System.out.println("Turma cadastrada com sucesso!");
                     break;
 
                     default:
