@@ -23,7 +23,7 @@ public class InterfaceDoUsuario {
             System.out.println("3. Matricular Aluno em Turma");
             System.out.println("4. Listar Alunos em Ordem Alfabética");
             System.out.println("5. Listar Turmas");
-            System.out.println("6. Listar Alunos Matriculados em uma Turma");
+            System.out.println("6. Listar Alunos Matriculados em Uma Turma");
             System.out.println("7. Listar Alunos Fora da Idade Prevista de Uma Etapa");
             System.out.println("8. Sair");
             System.out.print("Escolha uma opção: ");
@@ -49,7 +49,7 @@ public class InterfaceDoUsuario {
                     // Cadastrar turma
                     System.out.print("Código da turma: ");
                     int codigoDaTurma = scanner.nextInt();
-                    scanner.nextLine();  // Limpar o buffer do scanner
+                    scanner.nextLine();
                     System.out.print("Etapa de ensino (infantil, fundamental anos iniciais, fundamental anos finais, médio): ");
                     String etapaDeEnsino = scanner.nextLine();
                     System.out.print("Ano: ");
@@ -78,6 +78,21 @@ public class InterfaceDoUsuario {
                     // Listar todas as turmas
                     System.out.println("Turmas cadastradas:");
                     System.out.println(turmas);
+                    break;
+                case 6:
+                    // Listar alunos matriculados em uma turma
+                    // System.out.println("Turmas cadastradas:");
+                    // System.out.println(turmas);
+                    break;
+                case 7:
+                    // Listar alunos fora da idade prevista em uma turma
+                    // System.out.println("Turmas cadastradas:");
+                    // System.out.println(turmas);
+                    break;
+                case 8:
+                    // Sair
+                    System.out.println("Encerrando o programa...");
+                    System.exit(0);
                     break;
             }
         } while (opcao != 8);
