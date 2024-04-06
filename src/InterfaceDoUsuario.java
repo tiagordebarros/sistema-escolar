@@ -66,8 +66,16 @@ public class InterfaceDoUsuario {
 
                     default:
                     System.out.println("Opção inválida.\n");
+                case 3:
+                    // Matricular aluno em turma
+                    // listaDeAlunos.matricular();
+                    break;
+                case 4:
+                    // Listar alunos em ordem alfabética
+                    listaDeAlunos.ordenar();
+                    break;
             }
-        } while (opcao != 7);
+        } while (opcao != 8);
         scanner.close();
     }
 }
