@@ -9,6 +9,7 @@ public class InterfaceDoUsuario {
 
         // Lista de alunos
         ListaDeAlunos listaDeAlunos = new ListaDeAlunos();
+        // List<ListaDeAlunos> arrayListaDeAlunos = listaDeAlunos; // Teste
 
         // Lista de turmas
         List<Turma> turmas = new ArrayList<>();
@@ -68,7 +69,44 @@ public class InterfaceDoUsuario {
                     System.out.println("Opção inválida.\n");
                 case 3:
                     // Matricular aluno em turma
+                    System.out.println("Nome do aluno: ");
+                    String nomeAlunoParaMatricula = scanner.nextLine();
+                    System.out.println("Número da turma: ");
+                    int numeroTurmaParaMatricula = scanner.nextInt();
+                    scanner.nextLine();
                     // listaDeAlunos.matricular();
+
+                    // Validar se a turma existe
+                    Turma turmaParaMatricula = null;
+                    // Adicionar o fragmento abaixo em um método isolado
+                    for ( Turma turmaAlunos : turmas ) {
+                        int cogigoTurma = turmaAlunos.getCodigoDaTurma();
+                        if (cogigoTurma == numeroTurmaParaMatricula) {
+                            turmaParaMatricula = turmaAlunos;
+                        } else {
+                            System.out.println("O código da turma informado não existe!");
+                        }
+                        break;
+                    }
+
+                    // Validar se o aluno foi cadastrado
+                    Aluno alunoParaMatricula = null;
+                    // Adicionar o fragmento abaixo em um método isolado
+                    for (Aluno alunoDaTurma : listaDeAlunos) {
+                        String nomeAluno = alunoDaTurma.getNome();
+                        if (nomeAluno == nomeAlunoParaMatricula) {
+                            alunoParaMatricula = alunoDaTurma;
+                        } else {
+                            System.out.println("O nome do aluno informado não existe!");
+                        }
+                    }
+                    break;
+
+                    if (turmaParaMatricula != null && alunoParaMatricula != null) {
+                        turmaParaMatricula.alunosMatriculados.add(alunoParaMatricula);
+                    } else {
+                        System.out.println("Ocorreu um erro inesperado ao realizar a matrícula!");
+                    }
                     break;
                 case 4:
                     // Listar alunos em ordem alfabética

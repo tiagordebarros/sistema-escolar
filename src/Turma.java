@@ -17,6 +17,10 @@ public class Turma {
     this.numeroDeMatriculados = numeroDeMatriculados;
   }
 
+  public int getCodigoDaTurma() {
+    return codigoDaTurma;
+  }
+
   // public void ListaDeTurmas() {
   //   this.listaDeTurmas = new ArrayList<>();
   // }
