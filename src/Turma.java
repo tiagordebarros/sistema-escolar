@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+
 class Turma {
   // Atributos
   int codigoDaTurma;
@@ -11,17 +12,17 @@ class Turma {
 
   // Método especial construtor
   public Turma(int codigoDaTurma, String etapaDeEnsino, int ano, int limiteDeVagas, int numeroDeMatriculados) {
-      this.codigoDaTurma = codigoDaTurma;
-      this.etapaDeEnsino = etapaDeEnsino;
-      this.ano = ano;
-      this.limiteDeVagas = limiteDeVagas;
-      this.numeroDeMatriculados = numeroDeMatriculados;
-      this.alunosMatriculados = new ArrayList<>();
+    this.codigoDaTurma = codigoDaTurma;
+    this.etapaDeEnsino = etapaDeEnsino;
+    this.ano = ano;
+    this.limiteDeVagas = limiteDeVagas;
+    this.numeroDeMatriculados = numeroDeMatriculados;
+    this.alunosMatriculados = new ArrayList<>();
   }
-  
+
   // Métodos getters
   public int getCodigoDaTurma() {
-      return codigoDaTurma;
+    return codigoDaTurma;
   }
 
   public String getEtapaDeEnsino() {
@@ -41,7 +42,7 @@ class Turma {
   }
 
   public List<Aluno> getAlunosMatriculados() {
-      return alunosMatriculados;
+    return alunosMatriculados;
   }
 
   // Métodos setters
@@ -72,12 +73,12 @@ class Turma {
   // Overrides
   @Override
   public String toString() {
-      return "{" +
-              "codigoDaTurma='" + codigoDaTurma + '\'' +
-              ", etapaDeEnsino='" + etapaDeEnsino + '\'' +
-              ", ano='" + ano + '\'' +
-              ", limiteDeVagas='" + limiteDeVagas + '\'' +
-              ", numeroDeMatriculados=" + numeroDeMatriculados +
-              '}';
+    return "{" +
+        "codigoDaTurma='" + codigoDaTurma + '\'' +
+        ", etapaDeEnsino='" + etapaDeEnsino + '\'' +
+        ", ano='" + ano + '\'' +
+        ", limiteDeVagas='" + limiteDeVagas + '\'' +
+        ", numeroDeMatriculados=" + numeroDeMatriculados +
+        '}';
   }
 }

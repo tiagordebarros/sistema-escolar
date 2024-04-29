@@ -36,42 +36,45 @@ public class Aluno {
   public void setNome(String nome) {
     this.nome = nome;
   }
+
   public void setCpf(String cpf) {
     this.cpf = cpf;
   }
+
   public void setEndereco(String endereco) {
     this.endereco = endereco;
   }
+
   public void setDataDeNascimento(LocalDate dataDeNascimento) {
     this.dataDeNascimento = dataDeNascimento;
   }
-  
+
   // Métodos em geral
   public int getIdade() {
     LocalDate dataAtual = LocalDate.now();
     return dataAtual.minusYears(dataDeNascimento.getYear()).getYear();
   }
 
-  //Overrides
+  // Overrides
   @Override
   public String toString() {
     return "{" +
-    "nome='" + nome + '\'' +
-    ", cpf='" + cpf + '\'' +
-    ", endereco='" + endereco + '\'' +
-    ", dataDeNascimento=" + dataDeNascimento +
-    '}';
+        "nome='" + nome + '\'' +
+        ", cpf='" + cpf + '\'' +
+        ", endereco='" + endereco + '\'' +
+        ", dataDeNascimento=" + dataDeNascimento +
+        '}';
   }
 
   @Override
   public boolean equals(Object outro) {
-      if (this == outro) {
-          return true;
-      }
-      if (outro == null || getClass() != outro.getClass()) {
-          return false;
-      }
-      Aluno aluno = (Aluno) outro;
-      return cpf.equals(aluno.cpf);
+    if (this == outro) {
+      return true;
+    }
+    if (outro == null || getClass() != outro.getClass()) {
+      return false;
+    }
+    Aluno aluno = (Aluno) outro;
+    return cpf.equals(aluno.cpf);
   }
 }

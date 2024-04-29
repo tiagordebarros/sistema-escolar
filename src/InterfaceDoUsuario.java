@@ -27,7 +27,7 @@ public class InterfaceDoUsuario {
             System.out.println("8. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine();  // Limpar o buffer do scanner
+            scanner.nextLine(); // Limpar o buffer do scanner
 
             switch (opcao) {
                 case 1:
@@ -53,7 +53,8 @@ public class InterfaceDoUsuario {
                     System.out.print("Código da turma: ");
                     int codigoDaTurma = scanner.nextInt();
                     scanner.nextLine();
-                    System.out.print("Etapa de ensino (infantil, fundamental anos iniciais, fundamental anos finais, médio): ");
+                    System.out.print(
+                            "Etapa de ensino (infantil, fundamental anos iniciais, fundamental anos finais, médio): ");
                     String etapaDeEnsino = scanner.nextLine();
                     System.out.print("Ano: ");
                     int ano = scanner.nextInt();
@@ -148,7 +149,7 @@ public class InterfaceDoUsuario {
                     System.out.print("Número da turma: ");
                     int numeroTurmaIdade = scanner.nextInt();
                     scanner.nextLine();
-                
+
                     // Encontrar a turma correspondente ao número fornecido
                     Turma turmaParaIdade = null;
                     for (Turma turmaAlunos : turmas) {
@@ -157,7 +158,7 @@ public class InterfaceDoUsuario {
                             break;
                         }
                     }
-                
+
                     if (turmaParaIdade == null) {
                         System.out.println("O número da turma informado não existe!");
                     } else {
