@@ -35,7 +35,9 @@ class ListaDeAlunos {
   return alunos.remove(alunos.size() - 1);
   }
 
-  // public int tamanho() {}
+  public int tamanho() {
+    return alunos.size();
+  }
 
   // public Aluno get(int index) {}
 
