@@ -141,8 +141,56 @@ public class InterfaceDoUsuario {
                     break;
                 case 7:
                     // Listar alunos fora da idade prevista em uma turma
-                    // System.out.println("Turmas cadastradas:");
-                    // System.out.println(turmas);
+                    System.out.print("Número da turma: ");
+                    int numeroTurmaIdade = scanner.nextInt();
+                    scanner.nextLine();
+                
+                    // Encontrar a turma correspondente ao número fornecido
+                    Turma turmaParaIdade = null;
+                    for (Turma turmaAlunos : turmas) {
+                        if (turmaAlunos.getCodigoDaTurma() == numeroTurmaIdade) {
+                            turmaParaIdade = turmaAlunos;
+                            break;
+                        }
+                    }
+                
+                    if (turmaParaIdade == null) {
+                        System.out.println("O número da turma informado não existe!");
+                    } else {
+                        List<Aluno> alunosMatriculados = turmaParaIdade.getAlunosMatriculados();
+                        if (alunosMatriculados.isEmpty()) {
+                            System.out.println("Nenhum aluno matriculado nesta turma.");
+                        } else {
+                            System.out.println("Alunos fora da idade prevista na turma " + numeroTurmaIdade + ":");
+                            for (Aluno estudante : alunosMatriculados) {
+                                int idadeAluno = estudante.getIdade();
+                                switch (turmaParaIdade.getEtapaDeEnsino()) {
+                                    case "infantil":
+                                        if (idadeAluno >= 6) {
+                                            System.out.println(estudante);
+                                        }
+                                        break;
+                                    case "fundamental anos iniciais":
+                                        if (!(idadeAluno >= 6 && idadeAluno <= 11)) {
+                                            System.out.println(estudante);
+                                        }
+                                        break;
+                                    case "fundamental anos finais":
+                                        if (!(idadeAluno >= 11 && idadeAluno <= 15)) {
+                                            System.out.println(estudante);
+                                        }
+                                        break;
+                                    case "médio":
+                                        if (!(idadeAluno >= 15 && idadeAluno <= 18)) {
+                                            System.out.println(estudante);
+                                        }
+                                        break;
+                                    default:
+                                        System.out.println("Erro: Etapa de ensino desconhecida.");
+                                }
+                            }
+                        }
+                    }
                     break;
                 case 8:
                     // Sair

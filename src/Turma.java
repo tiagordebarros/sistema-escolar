@@ -21,6 +21,10 @@ class Turma {
       return codigoDaTurma;
   }
 
+  public String getEtapaDeEnsino() {
+    return etapaDeEnsino;
+}
+
   public List<Aluno> getAlunosMatriculados() {
       return alunosMatriculados;
   }
