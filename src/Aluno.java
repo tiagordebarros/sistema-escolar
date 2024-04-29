@@ -32,4 +32,15 @@ public class Aluno {
     '}';
   }
 
+  @Override
+  public boolean equals(Object outro) {
+      if (this == outro) {
+          return true;
+      }
+      if (outro == null || getClass() != outro.getClass()) {
+          return false;
+      }
+      Aluno aluno = (Aluno) outro;
+      return cpf.equals(aluno.cpf);
+  }
 }
