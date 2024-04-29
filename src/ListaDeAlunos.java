@@ -11,7 +11,7 @@ class ListaDeAlunos {
 
   public void incluirNoInicio(Aluno aluno) throws ExcecaoDeAlunoJaExistente {
       if (alunos.contains(aluno)) {
-        throw new ExcecaoDeAlunoJaExistente("Aluno já existe na lista.");
+        throw new ExcecaoDeAlunoJaExistente("O CPF informado já existe na lista.");
       }
       alunos.add(0, aluno);
       System.out.println(alunos);
@@ -20,7 +20,7 @@ class ListaDeAlunos {
 
   public void incluirNoFim(Aluno aluno) throws ExcecaoDeAlunoJaExistente {
       if (alunos.contains(aluno)) {
-        throw new ExcecaoDeAlunoJaExistente("Aluno já existe na lista.");
+        throw new ExcecaoDeAlunoJaExistente("O CPF informado já existe na lista.");
       }
       alunos.add(aluno);
       System.out.println(alunos);
