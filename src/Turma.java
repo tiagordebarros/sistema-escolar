@@ -1,40 +1,38 @@
 import java.util.List;
-// import java.util.ArrayList;
-public class Turma {
+import java.util.ArrayList;
+class Turma {
   int codigoDaTurma;
   String etapaDeEnsino;
   int ano;
   int limiteDeVagas;
   int numeroDeMatriculados;
   List<Aluno> alunosMatriculados;
-  // List<Turma> listaDeTurmas;
 
   public Turma(int codigoDaTurma, String etapaDeEnsino, int ano, int limiteDeVagas, int numeroDeMatriculados) {
-    this.codigoDaTurma = codigoDaTurma;
-    this.etapaDeEnsino = etapaDeEnsino;
-    this.ano = ano;
-    this.limiteDeVagas = limiteDeVagas;
-    this.numeroDeMatriculados = numeroDeMatriculados;
+      this.codigoDaTurma = codigoDaTurma;
+      this.etapaDeEnsino = etapaDeEnsino;
+      this.ano = ano;
+      this.limiteDeVagas = limiteDeVagas;
+      this.numeroDeMatriculados = numeroDeMatriculados;
+      this.alunosMatriculados = new ArrayList<>();
   }
 
-  // public void ListaDeTurmas() {
-  //   this.listaDeTurmas = new ArrayList<>();
-  // }
+  public int getCodigoDaTurma() {
+      return codigoDaTurma;
+  }
 
-  // public void cadastrarTurma(Turma turma) {
-  //   listaDeTurmas.add(turma);
-  //   System.out.println(listaDeTurmas);
-  //   System.out.println("Turma cadastrada com sucesso!");
-  // }
+  public List<Aluno> getAlunosMatriculados() {
+      return alunosMatriculados;
+  }
 
   @Override
   public String toString() {
-    return "{" +
-    "codigoDaTurma='" + codigoDaTurma + '\'' +
-    ", etapaDeEnsino='" + etapaDeEnsino + '\'' +
-    ", ano='" + ano + '\'' +
-    ", limiteDeVagas='" + limiteDeVagas + '\'' +
-    ", numeroDeMatriculados=" + numeroDeMatriculados +
-    '}';
+      return "{" +
+              "codigoDaTurma='" + codigoDaTurma + '\'' +
+              ", etapaDeEnsino='" + etapaDeEnsino + '\'' +
+              ", ano='" + ano + '\'' +
+              ", limiteDeVagas='" + limiteDeVagas + '\'' +
+              ", numeroDeMatriculados=" + numeroDeMatriculados +
+              '}';
   }
 }

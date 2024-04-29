@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class InterfaceDoUsuario {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         // Lista de alunos
@@ -12,7 +12,6 @@ public class InterfaceDoUsuario {
 
         // Lista de turmas
         List<Turma> turmas = new ArrayList<>();
-        // Turma listaDeTurmas = new Turma();
 
         // Menu de opções
         int opcao;
@@ -63,12 +62,44 @@ public class InterfaceDoUsuario {
                     System.out.println(turmas);
                     System.out.println("Turma cadastrada com sucesso!");
                     break;
-
-                    default:
-                    System.out.println("Opção inválida.\n");
                 case 3:
                     // Matricular aluno em turma
-                    // listaDeAlunos.matricular();
+                    System.out.println("Nome do aluno: ");
+                    String nomeAlunoParaMatricula = scanner.nextLine();
+                    System.out.println("Número da turma: ");
+                    int numeroTurmaParaMatricula = scanner.nextInt();
+                    scanner.nextLine();
+
+                    // Validar se a turma existe
+                    Turma turmaParaMatricula = null;
+                    for (Turma turmaAlunos : turmas) {
+                        int codigoTurma = turmaAlunos.getCodigoDaTurma();
+                        if (codigoTurma == numeroTurmaParaMatricula) {
+                            turmaParaMatricula = turmaAlunos;
+                            break;
+                        }
+                    }
+                    if (turmaParaMatricula == null) {
+                        System.out.println("O código da turma informado não existe!");
+                        break;
+                    }
+
+                    // Validar se o aluno foi cadastrado
+                    Aluno alunoParaMatricula = null;
+                    for (Aluno alunoDaTurma : listaDeAlunos.getAlunos()) {
+                        String nomeAluno = alunoDaTurma.getNome();
+                        if (nomeAluno.equals(nomeAlunoParaMatricula)) {
+                            alunoParaMatricula = alunoDaTurma;
+                            break;
+                        }
+                    }
+                    if (alunoParaMatricula == null) {
+                        System.out.println("O nome do aluno informado não existe!");
+                        break;
+                    }
+
+                    turmaParaMatricula.getAlunosMatriculados().add(alunoParaMatricula);
+                    System.out.println("Aluno matriculado com sucesso!");
                     break;
                 case 4:
                     // Listar alunos em ordem alfabética
@@ -94,6 +125,8 @@ public class InterfaceDoUsuario {
                     System.out.println("Encerrando o programa...");
                     System.exit(0);
                     break;
+                default:
+                    System.out.println("Opção inválida.\n");
             }
         } while (opcao != 8);
         scanner.close();
