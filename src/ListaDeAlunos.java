@@ -9,13 +9,19 @@ class ListaDeAlunos {
       this.alunos = new ArrayList<>();
   }
 
-  public void incluirNoInicio(Aluno aluno) {
+  public void incluirNoInicio(Aluno aluno) throws ExcecaoDeAlunoJaExistente {
+      if (alunos.contains(aluno)) {
+        throw new ExcecaoDeAlunoJaExistente("Aluno já existe na lista.");
+      }
       alunos.add(0, aluno);
       System.out.println(alunos);
       System.out.println("Aluno adicionado com sucesso!");
   }
 
-  public void incluirNoFim(Aluno aluno) {
+  public void incluirNoFim(Aluno aluno) throws ExcecaoDeAlunoJaExistente {
+      if (alunos.contains(aluno)) {
+        throw new ExcecaoDeAlunoJaExistente("Aluno já existe na lista.");
+      }
       alunos.add(aluno);
       System.out.println(alunos);
       System.out.println("Aluno cadastrado com sucesso!");

@@ -41,8 +41,12 @@ public class InterfaceDoUsuario {
                     System.out.print("Data de nascimento do aluno (AAAA-MM-DD): ");
                     String dataNascimentoStr = scanner.nextLine();
                     LocalDate dataNascimento = LocalDate.parse(dataNascimentoStr);
-                    Aluno aluno = new Aluno(nome, cpf, endereco, dataNascimento);
-                    listaDeAlunos.incluirNoFim(aluno);
+                    try {
+                        Aluno aluno = new Aluno(nome, cpf, endereco, dataNascimento);
+                        listaDeAlunos.incluirNoFim(aluno);
+                    } catch (ExcecaoDeAlunoJaExistente e) {
+                        System.out.println("Erro ao inserir aluno: " + e.getMessage());
+                    }
                     break;
                 case 2:
                     // Cadastrar turma
