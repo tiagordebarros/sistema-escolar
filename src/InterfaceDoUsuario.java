@@ -112,8 +112,32 @@ public class InterfaceDoUsuario {
                     break;
                 case 6:
                     // Listar alunos matriculados em uma turma
-                    // System.out.println("Turmas cadastradas:");
-                    // System.out.println(turmas);
+                    System.out.print("Número da turma: ");
+                    int numeroTurmaListar = scanner.nextInt();
+                    scanner.nextLine();
+
+                    // Encontrar a turma correspondente ao número fornecido
+                    Turma turmaParaListar = null;
+                    for (Turma turmaAlunos : turmas) {
+                        if (turmaAlunos.getCodigoDaTurma() == numeroTurmaListar) {
+                            turmaParaListar = turmaAlunos;
+                            break;
+                        }
+                    }
+
+                    if (turmaParaListar == null) {
+                        System.out.println("O número da turma informado não existe!");
+                    } else {
+                        List<Aluno> alunosMatriculados = turmaParaListar.getAlunosMatriculados();
+                        if (alunosMatriculados.isEmpty()) {
+                            System.out.println("Nenhum aluno matriculado nesta turma.");
+                        } else {
+                            System.out.println("Alunos matriculados na turma " + numeroTurmaListar + ":");
+                            for (Aluno estudante : alunosMatriculados) {
+                                System.out.println(estudante);
+                            }
+                        }
+                    }
                     break;
                 case 7:
                     // Listar alunos fora da idade prevista em uma turma
