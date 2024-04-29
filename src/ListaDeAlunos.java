@@ -27,7 +27,13 @@ class ListaDeAlunos {
       System.out.println("Alunos ordenados com sucesso!");
   }
 
-  // public Aluno removerDoFim() {}
+  public Aluno removerDoFim() {
+    if (alunos.isEmpty()) {
+      System.out.println("A lista de alunos está vazia.");
+      return null;
+  }
+  return alunos.remove(alunos.size() - 1);
+  }
 
   // public int tamanho() {}
 
