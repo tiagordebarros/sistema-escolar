@@ -39,7 +39,13 @@ class ListaDeAlunos {
     return alunos.size();
   }
 
-  // public Aluno get(int index) {}
+  public Aluno get(int index) {
+    if (index < 0 || index >= alunos.size()) {
+      System.out.println("Índice inválido.");
+      return null;
+    }
+    return alunos.get(index);
+  }
 
   public List<Aluno> getAlunos() {
       return alunos;
